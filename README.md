@@ -1,7 +1,7 @@
 
-#  NaprawTo – Evidence-Based AI Troubleshooting
+#  FixIt – Evidence-Based AI Troubleshooting
 
-NaprawTo to prototyp asystenta AI wspierającego diagnostykę usterek urządzeń domowych. Zamiast generować pojedynczą odpowiedź na podstawie opisu problemu, system prowadzi użytkownika przez uporządkowany proces diagnostyczny, wykorzystując dokumentację techniczną, pytania uzupełniające i dostępne narzędzia.
+FixIt to prototyp asystenta AI wspierającego diagnostykę usterek urządzeń domowych. Zamiast generować pojedynczą odpowiedź na podstawie opisu problemu, system prowadzi użytkownika przez uporządkowany proces diagnostyczny, wykorzystując dokumentację techniczną, pytania uzupełniające i dostępne narzędzia.
 
 ##  Cel projektu
 
@@ -9,7 +9,7 @@ Celem projektu jest opracowanie agenta diagnostycznego, który potrafi analizowa
 
 Projekt koncentruje się na połączeniu agentów AI, RAG, Tool Calling i MCP w jednym procesie diagnostycznym, ze szczególnym uwzględnieniem wiarygodności odpowiedzi i bezpieczeństwa użytkownika.
 
-##  Co wyróżnia NaprawTo?
+##  Co wyróżnia FixIt?
 
 - **Diagnostyka iteracyjna** – agent zadaje pytania uzupełniające i aktualizuje hipotezy na podstawie uzyskanych informacji.
 - **Odpowiedzi oparte na źródłach** – system wykorzystuje dokumentację techniczną i wskazuje materiały wspierające proponowaną diagnozę.
@@ -58,7 +58,7 @@ Agent pełni funkcję koordynatora procesu diagnostycznego. Jego zadania obejmuj
 
 ##  Bezpieczeństwo i ograniczenia
 
-NaprawTo ma wspierać wstępną diagnostykę, a nie zastępować profesjonalny serwis.
+FixIt ma wspierać wstępną diagnostykę, a nie zastępować profesjonalny serwis.
 
 System powinien:
 
