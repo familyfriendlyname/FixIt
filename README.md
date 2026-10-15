@@ -1,64 +1,102 @@
-# 🔧 NaprawTo – AI Assistant for Troubleshooting
 
-**NaprawTo** to aplikacja wykorzystująca sztuczną inteligencję do diagnozowania usterek urządzeń domowych. Pomaga użytkownikom znaleźć możliwe przyczyny problemów oraz wskazuje, co można bezpiecznie sprawdzić samodzielnie.
+# 🔧 NaprawTo – Evidence-Based AI Troubleshooting
+
+NaprawTo to prototyp asystenta AI wspierającego diagnostykę usterek urządzeń domowych. Zamiast generować pojedynczą odpowiedź na podstawie opisu problemu, system prowadzi użytkownika przez uporządkowany proces diagnostyczny, wykorzystując dokumentację techniczną, pytania uzupełniające i dostępne narzędzia.
 
 ## 🎯 Cel projektu
 
-Celem projektu jest stworzenie asystenta AI, który wspiera użytkownika w diagnozowaniu awarii urządzeń domowych na podstawie opisu problemu i dokumentacji technicznej.
+Celem projektu jest opracowanie agenta diagnostycznego, który potrafi analizować objawy usterek, porównywać możliwe przyczyny oraz uzasadniać proponowane działania na podstawie dostępnych źródeł wiedzy.
 
-## ❓ Problem
+Projekt koncentruje się na połączeniu agentów AI, RAG, Tool Calling i MCP w jednym procesie diagnostycznym, ze szczególnym uwzględnieniem wiarygodności odpowiedzi i bezpieczeństwa użytkownika.
 
-Znalezienie przyczyny awarii urządzenia domowego bywa trudne, szczególnie bez specjalistycznej wiedzy technicznej. Użytkownicy często nie wiedzą, od czego rozpocząć diagnozę ani jakie czynności mogą bezpiecznie wykonać samodzielnie.
+## 💡 Co wyróżnia NaprawTo?
 
-## 👥 Grupa docelowa
-
-Aplikacja jest przeznaczona dla osób, które chcą samodzielnie zidentyfikować możliwe przyczyny usterek urządzeń domowych i dowiedzieć się, jakie kroki diagnostyczne warto podjąć.
+- **Diagnostyka iteracyjna** – agent zadaje pytania uzupełniające i aktualizuje hipotezy na podstawie uzyskanych informacji.
+- **Odpowiedzi oparte na źródłach** – system wykorzystuje dokumentację techniczną i wskazuje materiały wspierające proponowaną diagnozę.
+- **Porównywanie możliwych przyczyn** – agent rozważa alternatywne wyjaśnienia objawów, zamiast bezwarunkowo wskazywać jedną przyczynę.
+- **Bezpieczeństwo diagnostyki** – proponowane czynności uwzględniają ryzyko, a sytuacje wymagające specjalistycznej wiedzy skutkują rekomendacją kontaktu z serwisem.
+- **Jawne wykorzystanie narzędzi** – Tool Calling i MCP umożliwiają agentowi korzystanie z funkcji i źródeł danych wspierających proces diagnostyczny.
 
 ## ⚙️ Jak to działa?
 
-1. **Opis problemu** – użytkownik opisuje objawy usterki.
-2. **Analiza** – agent AI zadaje pytania uzupełniające i analizuje dostępne informacje.
-3. **Wyszukiwanie wiedzy** – aplikacja korzysta z instrukcji obsługi i dokumentacji technicznej.
-4. **Diagnoza** – agent wskazuje najbardziej prawdopodobne przyczyny problemu.
-5. **Zalecenia** – użytkownik otrzymuje propozycje bezpiecznych czynności diagnostycznych i dalszych kroków.
+1. **Opis usterki** – użytkownik przedstawia objawy i, jeśli to możliwe, podaje markę oraz model urządzenia.
+2. **Doprecyzowanie problemu** – agent zadaje pytania pozwalające zawęzić listę potencjalnych przyczyn.
+3. **Wyszukiwanie wiedzy** – mechanizm RAG wyszukuje odpowiednie fragmenty instrukcji i dokumentacji technicznej.
+4. **Analiza hipotez** – agent porównuje objawy z odnalezionymi informacjami i identyfikuje możliwe przyczyny.
+5. **Dobór kolejnych kroków** – agent wybiera pytania lub bezpieczne czynności diagnostyczne, które mogą pomóc rozróżnić hipotezy.
+6. **Prezentacja wyniku** – użytkownik otrzymuje możliwe wyjaśnienia, uzasadnienie, źródła i zalecane dalsze działania.
 
 ## 🤖 Rola agenta AI
 
-Agent AI pełni funkcję inteligentnego asystenta diagnostycznego. Jego zadania obejmują:
+Agent pełni funkcję koordynatora procesu diagnostycznego. Jego zadania obejmują:
 
-- Prowadzenie rozmowy z użytkownikiem i zadawanie pytań doprecyzowujących.
-- Analizowanie objawów i identyfikowanie możliwych przyczyn awarii.
-- Wykorzystywanie instrukcji obsługi i dokumentacji technicznej.
-- Dobieranie odpowiednich narzędzi za pomocą mechanizmu **Tool Calling**.
-- Formułowanie zaleceń dotyczących bezpiecznej diagnostyki.
+- Prowadzenie rozmowy z użytkownikiem i zadawanie pytań uzupełniających.
+- Analizowanie objawów i porównywanie możliwych przyczyn.
+- Wykorzystywanie dokumentacji technicznej za pomocą RAG.
+- Dobieranie narzędzi i wywoływanie funkcji za pomocą Tool Calling.
+- Korzystanie z integracji udostępnianych przez MCP.
+- Formułowanie zaleceń z uwzględnieniem niepewności i bezpieczeństwa.
 
 ## 🛠️ Technologie
 
 - **.NET** – platforma do budowy aplikacji.
-- **AI Agent** – agent odpowiedzialny za prowadzenie procesu diagnostycznego.
-- **Tool Calling** – umożliwia agentowi wywoływanie funkcji i korzystanie z narzędzi.
-- **MCP (Model Context Protocol)** – standard komunikacji modelu AI z narzędziami i źródłami danych.
-- **RAG (Retrieval-Augmented Generation)** – umożliwia wykorzystanie dokumentacji podczas generowania odpowiedzi.
+- **AI Agent** – koordynacja rozmowy i procesu diagnostycznego.
+- **Tool Calling** – wywoływanie funkcji wspierających diagnozę.
+- **MCP (Model Context Protocol)** – integracja agenta z narzędziami i źródłami danych.
+- **RAG (Retrieval-Augmented Generation)** – wyszukiwanie wiedzy w dokumentacji technicznej przed wygenerowaniem odpowiedzi.
 
-## 🧪 Zakres projektu
+## 🔍 Przykładowy scenariusz
 
-W ramach projektu powstanie prosta aplikacja demonstracyjna obejmująca:
+**Problem:** Pralka nie odprowadza wody po zakończeniu programu.
+
+1. Użytkownik opisuje objawy usterki.
+2. Agent pyta, czy urządzenie wyświetla kod błędu i czy słychać pracę pompy.
+3. RAG wyszukuje odpowiednie procedury diagnostyczne w instrukcji obsługi.
+4. Agent porównuje możliwe przyczyny, np. niedrożność odpływu lub problem z pompą.
+5. System proponuje odpowiednie, bezpieczne kroki diagnostyczne.
+6. Jeśli problem wymaga specjalistycznej interwencji, agent zaleca kontakt z serwisem.
+
+## 🛡️ Bezpieczeństwo i ograniczenia
+
+NaprawTo ma wspierać wstępną diagnostykę, a nie zastępować profesjonalny serwis.
+
+System powinien:
+
+- Jasno komunikować niepewność diagnozy.
+- Opierać zalecenia na dostępnych źródłach i informacjach o urządzeniu.
+- Unikać instrukcji mogących narazić użytkownika na niebezpieczeństwo.
+- Rozpoznawać sytuacje wymagające przerwania diagnostyki i kontaktu ze specjalistą.
+- Zalecać kontakt z odpowiednimi służbami w sytuacjach bezpośredniego zagrożenia.
+
+> **Uwaga:** Wynik generowany przez AI jest sugestią, a nie potwierdzoną diagnozą techniczną. Nie zastępuje profesjonalnej oceny ani naprawy wykonanej przez wykwalifikowany serwis.
+
+## 🧪 Weryfikacja działania
+
+Projekt zakłada testowanie na zestawie przykładowych usterek urządzeń domowych.
+
+Ocena działania systemu powinna obejmować:
+
+- **Trafność diagnozy** – czy wskazane przyczyny odpowiadają rzeczywistym usterkom.
+- **Jakość źródeł** – czy odpowiedzi są zgodne z dokumentacją techniczną.
+- **Jakość pytań** – czy pytania agenta pomagają zawęzić możliwe przyczyny.
+- **Wykorzystanie narzędzi** – czy agent prawidłowo dobiera i wywołuje dostępne funkcje.
+- **Bezpieczeństwo** – czy zalecenia nie zachęcają do wykonywania niebezpiecznych czynności.
+
+## 🚀 Zakres projektu
+
+W ramach prototypu planowane jest:
 
 - Przyjmowanie opisów usterek od użytkownika.
 - Prowadzenie interaktywnej rozmowy diagnostycznej.
 - Wyszukiwanie informacji w dokumentacji z wykorzystaniem RAG.
 - Wywoływanie narzędzi przez agenta AI.
-- Generowanie propozycji diagnozy i zaleceń.
-- Testowanie działania na zestawie przykładowych usterek urządzeń domowych.
+- Generowanie diagnoz z uzasadnieniem i propozycjami dalszych kroków.
+- Testowanie działania na zestawie przykładowych usterek.
 
-## 🛡️ Bezpieczeństwo
-
-NaprawTo ma wspierać użytkownika w wykonywaniu wyłącznie bezpiecznych czynności diagnostycznych. W przypadku usterek wymagających specjalistycznej wiedzy aplikacja powinna zalecać kontakt z wykwalifikowanym serwisem.
-
-> **Uwaga:** Aplikacja ma charakter pomocniczy. Wygenerowana diagnoza jest jedynie sugestią i nie zastępuje profesjonalnej oceny technicznej.
-
-## 🚀 Status projektu
+## 📌 Status projektu
 
 **Status:** W fazie rozwoju.
 
-Celem jest stworzenie prototypu prezentującego możliwości wykorzystania agentów AI, Tool Calling, MCP i RAG w praktycznym zastosowaniu.
+Celem jest stworzenie prototypu i zweryfikowanie, czy połączenie interaktywnej diagnostyki, dokumentacji technicznej oraz mechanizmów kontroli bezpieczeństwa pozwala uzyskać bardziej uzasadnione i użyteczne odpowiedzi.
+
+Projekt stanowi praktyczną demonstrację zastosowania agentów AI, Tool Calling, MCP i RAG w procesie diagnostyki usterek urządzeń domowych.
