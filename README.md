@@ -1,15 +1,15 @@
 
-# 🔧 NaprawTo – Evidence-Based AI Troubleshooting
+#  NaprawTo – Evidence-Based AI Troubleshooting
 
 NaprawTo to prototyp asystenta AI wspierającego diagnostykę usterek urządzeń domowych. Zamiast generować pojedynczą odpowiedź na podstawie opisu problemu, system prowadzi użytkownika przez uporządkowany proces diagnostyczny, wykorzystując dokumentację techniczną, pytania uzupełniające i dostępne narzędzia.
 
-## 🎯 Cel projektu
+##  Cel projektu
 
 Celem projektu jest opracowanie agenta diagnostycznego, który potrafi analizować objawy usterek, porównywać możliwe przyczyny oraz uzasadniać proponowane działania na podstawie dostępnych źródeł wiedzy.
 
 Projekt koncentruje się na połączeniu agentów AI, RAG, Tool Calling i MCP w jednym procesie diagnostycznym, ze szczególnym uwzględnieniem wiarygodności odpowiedzi i bezpieczeństwa użytkownika.
 
-## 💡 Co wyróżnia NaprawTo?
+##  Co wyróżnia NaprawTo?
 
 - **Diagnostyka iteracyjna** – agent zadaje pytania uzupełniające i aktualizuje hipotezy na podstawie uzyskanych informacji.
 - **Odpowiedzi oparte na źródłach** – system wykorzystuje dokumentację techniczną i wskazuje materiały wspierające proponowaną diagnozę.
@@ -17,7 +17,7 @@ Projekt koncentruje się na połączeniu agentów AI, RAG, Tool Calling i MCP w 
 - **Bezpieczeństwo diagnostyki** – proponowane czynności uwzględniają ryzyko, a sytuacje wymagające specjalistycznej wiedzy skutkują rekomendacją kontaktu z serwisem.
 - **Jawne wykorzystanie narzędzi** – Tool Calling i MCP umożliwiają agentowi korzystanie z funkcji i źródeł danych wspierających proces diagnostyczny.
 
-## ⚙️ Jak to działa?
+##  Jak to działa?
 
 1. **Opis usterki** – użytkownik przedstawia objawy i, jeśli to możliwe, podaje markę oraz model urządzenia.
 2. **Doprecyzowanie problemu** – agent zadaje pytania pozwalające zawęzić listę potencjalnych przyczyn.
@@ -26,7 +26,7 @@ Projekt koncentruje się na połączeniu agentów AI, RAG, Tool Calling i MCP w 
 5. **Dobór kolejnych kroków** – agent wybiera pytania lub bezpieczne czynności diagnostyczne, które mogą pomóc rozróżnić hipotezy.
 6. **Prezentacja wyniku** – użytkownik otrzymuje możliwe wyjaśnienia, uzasadnienie, źródła i zalecane dalsze działania.
 
-## 🤖 Rola agenta AI
+##  Rola agenta AI
 
 Agent pełni funkcję koordynatora procesu diagnostycznego. Jego zadania obejmują:
 
@@ -37,7 +37,7 @@ Agent pełni funkcję koordynatora procesu diagnostycznego. Jego zadania obejmuj
 - Korzystanie z integracji udostępnianych przez MCP.
 - Formułowanie zaleceń z uwzględnieniem niepewności i bezpieczeństwa.
 
-## 🛠️ Technologie
+##  Technologie
 
 - **.NET** – platforma do budowy aplikacji.
 - **AI Agent** – koordynacja rozmowy i procesu diagnostycznego.
@@ -45,7 +45,7 @@ Agent pełni funkcję koordynatora procesu diagnostycznego. Jego zadania obejmuj
 - **MCP (Model Context Protocol)** – integracja agenta z narzędziami i źródłami danych.
 - **RAG (Retrieval-Augmented Generation)** – wyszukiwanie wiedzy w dokumentacji technicznej przed wygenerowaniem odpowiedzi.
 
-## 🔍 Przykładowy scenariusz
+##  Przykładowy scenariusz
 
 **Problem:** Pralka nie odprowadza wody po zakończeniu programu.
 
@@ -56,7 +56,7 @@ Agent pełni funkcję koordynatora procesu diagnostycznego. Jego zadania obejmuj
 5. System proponuje odpowiednie, bezpieczne kroki diagnostyczne.
 6. Jeśli problem wymaga specjalistycznej interwencji, agent zaleca kontakt z serwisem.
 
-## 🛡️ Bezpieczeństwo i ograniczenia
+##  Bezpieczeństwo i ograniczenia
 
 NaprawTo ma wspierać wstępną diagnostykę, a nie zastępować profesjonalny serwis.
 
@@ -70,7 +70,7 @@ System powinien:
 
 > **Uwaga:** Wynik generowany przez AI jest sugestią, a nie potwierdzoną diagnozą techniczną. Nie zastępuje profesjonalnej oceny ani naprawy wykonanej przez wykwalifikowany serwis.
 
-## 🧪 Weryfikacja działania
+##  Weryfikacja działania
 
 Projekt zakłada testowanie na zestawie przykładowych usterek urządzeń domowych.
 
@@ -82,7 +82,7 @@ Ocena działania systemu powinna obejmować:
 - **Wykorzystanie narzędzi** – czy agent prawidłowo dobiera i wywołuje dostępne funkcje.
 - **Bezpieczeństwo** – czy zalecenia nie zachęcają do wykonywania niebezpiecznych czynności.
 
-## 🚀 Zakres projektu
+##  Zakres projektu
 
 W ramach prototypu planowane jest:
 
@@ -93,7 +93,7 @@ W ramach prototypu planowane jest:
 - Generowanie diagnoz z uzasadnieniem i propozycjami dalszych kroków.
 - Testowanie działania na zestawie przykładowych usterek.
 
-## 📌 Status projektu
+##  Status projektu
 
 **Status:** W fazie rozwoju.
 
